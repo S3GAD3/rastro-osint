@@ -389,6 +389,9 @@ const RASTRO_TOOLS = [
   {id:'rastro-link', name:'RASTRO · LINK', tag:'Análisis de Vínculos', icon:'🕸️', color:'#0284c7',
     desc:'Analiza y representa visualmente entidades, relaciones y evidencias de una investigación: grafo editable (teléfonos, SIM, IMEI, personas, cuentas…), fichas con fuentes y fechas, inventario y análisis estructural, importación JSON/CSV y exportación JSON, CSV, PNG, HTML y PDF. Todo local en el navegador.',
     url:'https://s3gad3.github.io/rastro-link/', repo:'https://github.com/S3GAD3/rastro-link'},
+  {id:'rastro-catastro', name:'RASTRO · CATASTRO', tag:'Catastro', icon:'🏠', color:'#78716c',
+    desc:'Consulta y organiza información catastral pública no protegida: búsqueda por referencia catastral, dirección, coordenadas WGS84 o parcela rústica en los servicios de la Dirección General del Catastro. Ficha organizada (localización, uso, superficies, antigüedad), enlace a la cartografía oficial y exportación JSON/PDF.',
+    url:'https://s3gad3.github.io/rastro-catastro/', repo:'https://github.com/S3GAD3/rastro-catastro'},
   {id:'rastro-ads', name:'RASTRO · ADS', tag:'Extensión · Monetización y Ads', icon:'💰', color:'#a66b00', isExtension:true,
     desc:'Extensión de navegador que documenta indicios de monetización, analítica y publicidad en una web: pub-IDs, Google Analytics/GTM, píxeles de Meta/TikTok e identificadores UET. Exporta informe con verificación SHA-256.',
     repo:'https://github.com/S3GAD3/rastro-ads'},
@@ -700,8 +703,7 @@ const SECTIONS = [
       {label:'Documentos que mencionan a la persona',q:'{nombre|name} (filetype:pdf OR filetype:docx OR filetype:xlsx) site:es'},
       {label:'Persona en contratos públicos',q:'site:contrataciondelestado.es {nombre|name}'},
       {label:'Persona en listados de oposiciones y resoluciones',q:'{nombre|name} ("admitidos" OR "aprobados" OR "lista definitiva" OR "resolución" OR "adjudicación") filetype:pdf site:es'},
-      {label:'Persona en noticias de prensa nacional',q:'{nombre|name} (site:elpais.com OR site:elmundo.es OR site:abc.es OR site:lavanguardia.com OR site:elconfidencial.com OR site:20minutos.es)[ {ciudad}]'},
-      {label:'Persona en prensa regional (Galicia)',q:'{nombre|name} (site:lavozdegalicia.es OR site:farodevigo.es OR site:elprogreso.es OR site:diariodepontevedra.es OR site:atlantico.net OR site:galiciapress.es)'},
+      {label:'Persona en noticias de prensa nacional',q:'{nombre|name} (site:elpais.com OR site:elmundo.es OR site:abc.es OR site:lavanguardia.com OR site:elconfidencial.com OR site:20minutos.es OR site:lavozdegalicia.es OR site:elperiodico.com OR site:eldiario.es OR site:publico.es)[ {ciudad}]'},
       {label:'Persona en noticias judiciales y sucesos',q:'{nombre|name} ("sentencia" OR "condenado" OR "imputado" OR "detenido" OR "investigado" OR "juzgado") site:es'},
     ]},
   ]
@@ -982,6 +984,9 @@ const SECTIONS = [
 {
   id:'s08',num:'08',title:'Mapas · GEOINT',color:'#2b6cb0',
   subs:[
+    {label:'⭐ RASTRO (propia)',links:[
+      {name:'RASTRO · CATASTRO',url:'https://s3gad3.github.io/rastro-catastro/',desc:'Búsqueda catastral por referencia, dirección, coordenadas o parcela rústica en los servicios de la DGC. Ficha organizada y exportación JSON/PDF.',tags:['rastro','catastro','inmuebles']},
+    ]},
     {label:'Mapas y Street View',links:[
       {name:'Google Maps',url:'https://www.google.com/maps',desc:'Plataforma de mapas de Google con Street View, satélite y navegación en tiempo real.',tags:['mapas','street view','satélite']},
       {name:'Bing Maps',url:'https://www.bing.com/maps',desc:'Mapas de Microsoft con vista aérea y herramientas de medición.',tags:['mapas','microsoft','aéreo']},
